@@ -4,6 +4,6 @@
 
 A blueprint of a minimal version of Redux in Swift.
 
-(Working in progress, more details comming soon...)
+==> Work in progress, more details comming soon...
 
 More info on Redux at https://redux.js.org
