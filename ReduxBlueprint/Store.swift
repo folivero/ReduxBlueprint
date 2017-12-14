@@ -5,7 +5,7 @@ import Foundation
 // something has changed. The subscriber logic can then call getState() to get the current state value.
 
 protocol StoreObserver: class {
-    func storeDidChange()
+    func storeChanged()
 }
 
 public final class Store<State, Action> {
@@ -30,7 +30,7 @@ public final class Store<State, Action> {
 
     public func dispatch(action: Action) {
         state = reducer(state, action)
-        observers.forEach { $0.storeDidChange() }
+        observers.forEach { $0.storeChanged() }
     }
 }
 

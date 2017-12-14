@@ -1,7 +1,7 @@
 import Foundation
 
 public protocol ContainerComponentDelegate: class {
-    func containerComponentPropertiesChanged()
+    func containerComponentChanged()
 }
 
 // 1) Maps a subset of the redux state to the properties that will be formatted by a PresentationComponent.
@@ -39,12 +39,12 @@ public final class ContainerComponent<State, Action, Command, Property> {
 }
 
 extension ContainerComponent: StoreObserver {
-    func storeDidChange() {
+    func storeChanged() {
         guard let state = store?.state else {
             return
         }
         properties = mapStateToProperties(state)
-        delegate?.containerComponentPropertiesChanged()
+        delegate?.containerComponentChanged()
     }
 }
 
