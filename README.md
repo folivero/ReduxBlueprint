@@ -4,8 +4,9 @@
 
 A blueprint of a minimal version of Redux written in Swift, as depicted in the following figure
 
-![Figure 1](images/design.pdf?raw=true "Title")
-
-==> Work in progress, more details comming soon...
+![Figure 1](https://github.com/folivero/ReduxBlueprint/files/1557924/design-v1.0.pdf)
 
 More info on Redux at https://redux.js.org
+
+...more details comming soon
+
