@@ -2,7 +2,9 @@
 
 # ReduxBlueprint
 
-A blueprint of a minimal version of Redux in Swift.
+A blueprint of a minimal version of Redux written in Swift, as depicted in the following figure
+
+![Figure 1](images/design.pdf?raw=true "Title")
 
 ==> Work in progress, more details comming soon...
 
