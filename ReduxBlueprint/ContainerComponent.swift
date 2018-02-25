@@ -23,8 +23,7 @@ public final class ContainerComponent<State, Action, Command, Property> {
     init(
         store: Store<State, Action>,
         mapStateToProperties: @escaping MapStateToProperties,
-        mapCommandToAction: @escaping MapCommandToAction)
-    {
+        mapCommandToAction: @escaping MapCommandToAction) {
         self.mapStateToProperties = mapStateToProperties
         self.mapCommandToAction = mapCommandToAction
         self.store = store

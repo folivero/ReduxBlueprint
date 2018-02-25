@@ -1,12 +1,4 @@
-//
-//  ReduxBlueprint.h
-//  ReduxBlueprint
-//
-//  Created by Fernando Olivero on 25.11.17.
-//  Copyright © 2017 Fernando Olivero. All rights reserved.
-//
-
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for ReduxBlueprint.
 FOUNDATION_EXPORT double ReduxBlueprintVersionNumber;
