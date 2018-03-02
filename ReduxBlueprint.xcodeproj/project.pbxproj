@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		815ADC7D2045CEEF00CBFF34 /* PresentationContainerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815ADC7C2045CEEE00CBFF34 /* PresentationContainerComponent.swift */; };
+		815ADC7E2045CEEF00CBFF34 /* PresentationContainerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815ADC7C2045CEEE00CBFF34 /* PresentationContainerComponent.swift */; };
 		81DA439F1FCA2A12006F4BC0 /* ReduxBlueprint.h in Headers */ = {isa = PBXBuildFile; fileRef = 81DA439D1FCA2A12006F4BC0 /* ReduxBlueprint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		81DA43A71FCA2A7A006F4BC0 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DA43A51FCA2A79006F4BC0 /* Store.swift */; };
 		81DA43A81FCA2A7A006F4BC0 /* ContainerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DA43A61FCA2A7A006F4BC0 /* ContainerComponent.swift */; };
@@ -16,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		815ADC7C2045CEEE00CBFF34 /* PresentationContainerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationContainerComponent.swift; sourceTree = "<group>"; };
 		81DA439A1FCA2A12006F4BC0 /* ReduxBlueprint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReduxBlueprint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81DA439D1FCA2A12006F4BC0 /* ReduxBlueprint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReduxBlueprint.h; sourceTree = "<group>"; };
 		81DA439E1FCA2A12006F4BC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				81DA439D1FCA2A12006F4BC0 /* ReduxBlueprint.h */,
+				815ADC7C2045CEEE00CBFF34 /* PresentationContainerComponent.swift */,
 				81DA43A61FCA2A7A006F4BC0 /* ContainerComponent.swift */,
 				81DA43A51FCA2A79006F4BC0 /* Store.swift */,
 				81DA439E1FCA2A12006F4BC0 /* Info.plist */,
@@ -203,6 +207,7 @@
 			files = (
 				81DA43A71FCA2A7A006F4BC0 /* Store.swift in Sources */,
 				81DA43A81FCA2A7A006F4BC0 /* ContainerComponent.swift in Sources */,
+				815ADC7D2045CEEF00CBFF34 /* PresentationContainerComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +217,7 @@
 			files = (
 				81E02B2E20435357005F971F /* ContainerComponent.swift in Sources */,
 				81E02B2F20435357005F971F /* Store.swift in Sources */,
+				815ADC7E2045CEEF00CBFF34 /* PresentationContainerComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

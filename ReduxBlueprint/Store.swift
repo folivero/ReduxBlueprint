@@ -31,7 +31,7 @@ public final class Store<State, Action> {
     // The only way to change the state is to emit an action, an object describing what happened.
     // This ensures that neither the views nor the network callbacks will ever write directly to the state.
     // Instead, they express an intent to transform the state.
-    public func dispatch(action: Action) {
+    func dispatch(action: Action) {
         state = reducer(state, action)
         observers.forEach { $0.storeChanged() }
     }

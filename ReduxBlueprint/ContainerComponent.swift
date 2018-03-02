@@ -1,49 +1,47 @@
 import Foundation
 
+// Container components: Are concerned with how things work.
+// Out: Maps a subset of the redux state to the properties that will be formatted by a PresentationComponent.
+// In: Maps commands coming from a PresentationComponent to a store action, and dispatch the mapped action.
+
 public protocol ContainerComponentDelegate: class {
     func containerComponentChanged()
 }
 
-// Container components: Are concerned with how things work.
-
-// Out: Maps a subset of the redux state to the properties that will be formatted by a PresentationComponent.
-// In: Maps commands coming from a PresentationComponent to a store action, and dispatch the mapped action.
-
-public final class ContainerComponent<State, Action, Command, Property> {
-    typealias MapStateToProperties = (State) -> [Property]
-    typealias MapCommandToAction = (Command) -> (Action)
-
+public final class ContainerComponent<State, Action, Command, Properties> {
+    public private(set) var properties: Properties
+    public weak var delegate: ContainerComponentDelegate?
     private var unsubscribe: (() -> Void)?
     private weak var store: Store<State, Action>?
-    private var properties: [Property] = []
-    private var mapStateToProperties: MapStateToProperties
-    private var mapCommandToAction: MapCommandToAction
-    weak var delegate: ContainerComponentDelegate?
+    private var mapStateToProperties: (State) -> Properties
+    private var mapCommandToAction: (Command) -> (Action?)
 
-    init(
+    public init(
         store: Store<State, Action>,
-        mapStateToProperties: @escaping MapStateToProperties,
-        mapCommandToAction: @escaping MapCommandToAction) {
+        mapStateToProperties: @escaping (State) -> Properties,
+        mapCommandToAction: @escaping (Command) -> Action?)
+    {
         self.mapStateToProperties = mapStateToProperties
         self.mapCommandToAction = mapCommandToAction
         self.store = store
-        self.unsubscribe = store.subscribe(observer: self)
+        properties = mapStateToProperties(store.state)
+        unsubscribe = store.subscribe(observer: self)
     }
 
     deinit {
         unsubscribe?()
     }
 
-    func dispatch(command: Command) {
-        store?.dispatch(action: mapCommandToAction(command))
+    public func dispatch(command: Command) {
+        if let action = mapCommandToAction(command) {
+            store?.dispatch(action: action)
+        }
     }
 }
 
 extension ContainerComponent: StoreObserver {
     func storeChanged() {
-        guard let state = store?.state else {
-            return
-        }
+        guard let state = store?.state else { return }
         properties = mapStateToProperties(state)
         delegate?.containerComponentChanged()
     }
